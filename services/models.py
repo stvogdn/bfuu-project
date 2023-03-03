@@ -14,7 +14,7 @@ class Service(models.Model):
     
     
     def __str__(self):
-        return self.date.isoformat()
+        return self.service_date.isoformat()
     
 class SegmentType(models.Model):
     name = models.CharField(verbose_name="Name", max_length=50)
