@@ -104,6 +104,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.venv*
 env/
 venv/
 ENV/
@@ -132,4 +133,4 @@ dmypy.json
 .DS_Store
 
 #local media
-media
+media/profile_pics
