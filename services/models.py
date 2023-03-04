@@ -19,6 +19,8 @@ class Service(models.Model):
 class SegmentType(models.Model):
     name = models.CharField(verbose_name="Name", max_length=50)
     description = models.CharField(verbose_name="Description", max_length=200)
+    template = models.TextField("Template", default="")
+    variables = models.TextField("Variables", default="{}")
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
     
@@ -28,8 +30,8 @@ class SegmentType(models.Model):
 class Segment(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     segment_type = models.ForeignKey(SegmentType, on_delete=models.CASCADE)
-    title = models.CharField(verbose_name="Title", max_length=200)
-    description = models.CharField(verbose_name="Description", max_length=200)
+    sequence = models.IntegerField(verbose_name="Sequence", default=0)
+    variables = models.TextField("Variables", default="{}")
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
     
