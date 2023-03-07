@@ -10,17 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-import os
 import environ
+import os
 from pathlib import Path
-
-# Initialise environment variables
-env = environ.Env()
-environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -149,7 +148,7 @@ LOGIN_URL = "login"
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = env('SENDGRID_API_KEY')
-DEFAULT_FROM_EMAIL = "admin@bfuu-wsc.org"
+DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
 
 
 # Toggle sandbox mode (when running in DEBUG mode)
@@ -157,3 +156,9 @@ SENDGRID_SANDBOX_MODE_IN_DEBUG=False
 
 # echo to stdout or any other file-like object that is passed to the backend via the stream kwarg.
 SENDGRID_ECHO_TO_STDOUT=False
+
+# A list of all the people who get code error notifications.
+ADMINS = env("ADMINS")
+
+# A list of all the people who should get broken link notifications.
+MANAGERS = env("MANAGERS")
