@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "storages",
+    "import_export",
 ]
 
 MIDDLEWARE = [
@@ -195,3 +196,5 @@ ADMINS = os.getenv("ADMINS")
 
 # A list of all the people who should get broken link notifications.
 MANAGERS = os.getenv("MANAGERS")
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True

@@ -62,6 +62,7 @@ urlpatterns = [
         name="password_reset_complete",
     ),
     path("", include("portal.urls")),
+    path("export_users/", user_views.export_user_data, name="export_users"),
 ]
 
 if settings.DEBUG:
