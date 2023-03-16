@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "storages",
 ]
 
 MIDDLEWARE = [
@@ -128,21 +129,31 @@ USE_L10N = True
 USE_TZ = True
 
 # django-storages
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+DEFAULT_FILE_STORAGE = 'bfuu_wsc.storage_settings.MediaStorage'
+STATICFILES_STORAGE = 'bfuu_wsc.storage_settings.StaticStorage'
 
-STORAGES = {"default": "storages.backends.s3boto3.S3Boto3Storage",
-            "static": "storages.backends.s3boto3.S3StaticStorage"}
+STORAGES = {"default": "bfuu_wsc.storage_settings.MediaStorage",
+            "static": "bfuu_wsc.storage_settings.StaticStorage"}
+
+# # Static files storage settings
+# AWS_STATIC_STORAGE_BUCKET_NAME = 'bfuu-wsc-static'
+# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STATIC_STORAGE_BUCKET_NAME}.s3.us-west-1.amazonaws.com'
+
+# # Media files storage settings
+# AWS_MEDIA_STORAGE_BUCKET_NAME = 'bfuu-wsc-media'
+# AWS_S3_MEDIA_CUSTOM_DOMAIN = f'{AWS_MEDIA_STORAGE_BUCKET_NAME}.s3.us-west-1.amazonaws.com'
+
 
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
 AWS_S3_REGION_NAME = os.getenv("AWS_S3_REGION_NAME")
 AWS_S3_ENDPOINT_URL = os.getenv("AWS_S3_ENDPOINT_URL")
-AWS_S3_CUSTOM_DOMAIN = os.getenv("AWS_S3_CUSTOM_DOMAIN")
+AWS_QUERYSTRING_AUTH = False
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
-
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
 
 
 # Static files (CSS, JavaScript, Images)
