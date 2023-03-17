@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "portal.apps.PortalConfig",
     "users.apps.UsersConfig",
     "services.apps.ServicesConfig",
+    "hymnal.apps.HymnalConfig",
     "crispy_forms",
     "crispy_bootstrap5",
     "django.contrib.admin",
