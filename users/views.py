@@ -3,8 +3,6 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
-
-from .resources import UserResource, ProfileResource
 from .models import Profile
 from django.contrib.auth.models import User
 

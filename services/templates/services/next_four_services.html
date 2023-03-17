@@ -1,8 +1,6 @@
 {% extends "portal/base.html" %}
 {% block content %}
-<div class="container">
-    <h1>BFUU WSC Portal</h1>
-    <h2>Upcoming Services</h2>
+    <h1>Next Four Services</h1>
     <ul>
         {% for service in upcoming_services %}
         <li>
@@ -18,5 +16,4 @@
         <li>No upcoming services.</li>
         {% endfor %}
     </ul>
-</div>
-{% endblock content %}
+{% endblock %}
