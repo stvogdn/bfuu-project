@@ -19,4 +19,4 @@ class Verse(models.Model):
         ]
 
     def __str__(self):
-        return f'{self.hymn.number} {self.hymn.title} {self.verse_number}'
+        return f'{self.hymn.number} {self.hymn.title} {self.verse_number} {self.verse}'
