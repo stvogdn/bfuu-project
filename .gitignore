@@ -137,3 +137,6 @@ media/profile_pics
 
 #Visual Studio Code
 .vscode
+
+#DigitalOcean
+plankton-app.yaml
