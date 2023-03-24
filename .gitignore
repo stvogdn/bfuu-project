@@ -139,4 +139,4 @@ media/profile_pics
 .vscode
 
 #DigitalOcean
-plankton-app.yaml
+digital-ocean-app.yaml
