@@ -7,7 +7,8 @@ from django.db.models.fields import DateTimeField
 class Service(models.Model):
     service_date = models.DateTimeField(verbose_name="Date and Time of Service")
     speaker = models.CharField(verbose_name="Speaker", max_length=50)
-    topic = models.CharField(verbose_name="Topic", max_length=200)
+    topic = models.CharField(verbose_name="Title", max_length=200)
+    description = models.TextField(verbose_name="Description", default="")
     coordinator = models.ForeignKey(User, on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
