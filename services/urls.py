@@ -4,5 +4,6 @@ from . import views
 urlpatterns = [
     path('create_segment_type', views.create_segment_type, name='services-create_segment_type'),
     path('create_service', views.create_service, name='services-create_service'),
-    path('service_list', views.service_list, name='services-service_list'),
+    path('list', views.service_list, name='services-service_list'),
+    path('segmenttype_list', views.segmenttype_list, name='services-segmenttype_list'),
 ]

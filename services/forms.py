@@ -1,7 +1,7 @@
 # forms.py
 
 from django import forms
-from .models import SegmentType, Service
+from .models import SegmentType, Service, Segment
 
 class SegmentTypeForm(forms.ModelForm):
     class Meta:
@@ -25,4 +25,15 @@ class ServiceForm(forms.ModelForm):
             'topic': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
             'coordinator': forms.Select(attrs={'class': 'form-control'}),
+        }
+
+class SegmentForm(forms.ModelForm):
+    class Meta:
+        model = Segment
+        fields = ['service', 'segment_type', 'sequence', 'variables']
+        widgets = {
+            'service': forms.Select(attrs={'class': 'form-control'}),
+            'segment_type': forms.Select(attrs={'class': 'form-control'}),
+            'sequence': forms.NumberInput(attrs={'class': 'form-control'}),
+            'variables': forms.Textarea(attrs={'class': 'form-control'}),
         }
