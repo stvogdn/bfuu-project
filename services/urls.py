@@ -1,3 +1,8 @@
 from django.urls import path
 from . import views
 
+urlpatterns = [
+    path('create_segment_type', views.create_segment_type, name='services-create_segment_type'),
+    path('create_service', views.create_service, name='services-create_service'),
+    path('service_list', views.service_list, name='services-service_list'),
+]

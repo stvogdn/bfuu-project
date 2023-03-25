@@ -1,0 +1,29 @@
+{% extends 'portal/base_no_sidebar.html' %}
+
+{% block content %}
+  <h1>Service List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Service Date</th>
+        <th>Speaker</th>
+        <th>Topic</th>
+        <th>Coordinator</th>
+        <th>Created</th>
+        <th>Modified</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for service in services %}
+    <tr>
+      <td>{{ service.service_date }}</td>
+      <td>{{ service.speaker }}</td>
+      <td>{{ service.topic }}</td>
+      <td>{{ service.coordinator }}</td>
+      <td>{{ service.date_created|date:"m-d-y G:i" }}</td>
+      <td>{{ service.date_modified|date:"m-d-y G:i" }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

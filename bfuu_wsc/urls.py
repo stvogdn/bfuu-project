@@ -62,6 +62,7 @@ urlpatterns = [
         name="password_reset_complete",
     ),
     path("", include("portal.urls")),
+    path("services/", include("services.urls")),
 ]
 
 if settings.DEBUG:
