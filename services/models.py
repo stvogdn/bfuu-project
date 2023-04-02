@@ -38,3 +38,30 @@ class Segment(models.Model):
     
     def __str__(self):
         return '{self.service.service_date.isoformat()} {self.sequence} {self.segment_type.name}'
+    
+class ScriptElements(models.Model):
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    liturgist_name = models.CharField(max_length=100)
+    prelude_hymn_number = models.IntegerField()
+    prelude_hymn_name = models.CharField(max_length=100)
+    opening_words = models.TextField()
+    principle_or_source_number = models.IntegerField()
+    principle_or_source = models.CharField(max_length=100)
+    principle_or_source_text = models.TextField()
+    first_hymn_number = models.IntegerField()
+    first_hymn_name = models.CharField(max_length=100)
+    meditation_reading = models.TextField()
+    metta_singer = models.CharField(max_length=100)
+    second_hymn_number = models.IntegerField()
+    second_hymn_name = models.CharField(max_length=100)
+    readers_names = models.CharField(max_length=100)
+    singers_names = models.CharField(max_length=100)
+    zoom_host_name = models.CharField(max_length=100)
+    slide_manager_name = models.CharField(max_length=100)
+    shared_plate_partner = models.CharField(max_length=100)
+    final_hymn_number = models.IntegerField()
+    final_hymn_name = models.CharField(max_length=100)
+    circle_round_singer = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'{{self.service.dervice_date}} {{self.liturgist_name}}'

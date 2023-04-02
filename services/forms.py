@@ -1,7 +1,7 @@
 # forms.py
 
 from django import forms
-from .models import SegmentType, Service, Segment
+from .models import SegmentType, Service, Segment, ScriptElements
 
 class SegmentTypeForm(forms.ModelForm):
     class Meta:
@@ -37,3 +37,8 @@ class SegmentForm(forms.ModelForm):
             'sequence': forms.NumberInput(attrs={'class': 'form-control'}),
             'variables': forms.Textarea(attrs={'class': 'form-control'}),
         }
+
+class ScriptElementsForm(forms.ModelForm):
+    class Meta:
+        model = ScriptElements
+        fields = '__all__'

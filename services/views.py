@@ -2,8 +2,8 @@
 # Create your views here.
 from django.shortcuts import render, redirect
 from django.utils import timezone
-from .models import Service, SegmentType, Segment
-from .forms import SegmentTypeForm, ServiceForm, SegmentForm
+from .models import Service, SegmentType, Segment, ScriptElements
+from .forms import SegmentTypeForm, ServiceForm, SegmentForm, ScriptElementsForm
 
 def next_four_services(request):
     now = timezone.now()
@@ -40,3 +40,13 @@ def service_list(request):
 def segmenttype_list(request):
     services = SegmentType.objects.all().order_by('name')
     return render(request, 'services/segmenttype__list.html', {'services': services})
+
+def add_script_elements(request):
+    if request.method == 'POST':
+        form = ScriptElementsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('records_list')
+    else:
+        form = ScriptElementsForm()
+    return render(request, 'services/scriptelements_form.html', {'form': form})

@@ -1,0 +1,10 @@
+{% extends 'portal/base.html' %}
+
+{% block content %}
+  <h2>Create Record</h2>
+  <form method="POST" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+{% endblock %}
