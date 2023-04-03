@@ -16,7 +16,7 @@ class Speaker(models.Model):
 
 class Service(models.Model):
     service_date = models.DateTimeField(verbose_name="Date and Time of Service")
-    speaker = models.CharField(verbose_name="Speaker", max_length=50)
+    speaker = models.ForeignKey(Speaker, on_delete=models.CASCADE)
     topic = models.CharField(verbose_name="Title", max_length=200)
     description = models.TextField(verbose_name="Description", default="")
     coordinator = models.ForeignKey(User, on_delete=models.CASCADE)
