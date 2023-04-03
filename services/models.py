@@ -4,6 +4,16 @@ from django.db.models.fields import DateTimeField
 
 # Create your models here.
 
+
+class Speaker(models.Model):
+    name = models.CharField(verbose_name="Name", max_length=50)
+    biography = models.TextField(verbose_name="Biography")
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.name
+
 class Service(models.Model):
     service_date = models.DateTimeField(verbose_name="Date and Time of Service")
     speaker = models.CharField(verbose_name="Speaker", max_length=50)
@@ -16,7 +26,7 @@ class Service(models.Model):
     
     def __str__(self):
         return self.service_date.isoformat()
-    
+
 class SegmentType(models.Model):
     name = models.CharField(verbose_name="Name", max_length=50)
     description = models.CharField(verbose_name="Description", max_length=200)
