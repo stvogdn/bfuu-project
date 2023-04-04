@@ -63,6 +63,7 @@ urlpatterns = [
     ),
     path("", include("portal.urls")),
     path("services/", include("services.urls")),
+    path("blog/", include("blog.urls")),
 ]
 
 if settings.DEBUG:
