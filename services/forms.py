@@ -21,7 +21,7 @@ class ServiceForm(forms.ModelForm):
         fields = ['service_date', 'speaker', 'topic', 'description', 'coordinator']
         widgets = {
             'service_date': forms.DateInput(attrs={'class': 'form-control'}),
-            'speaker': forms.TextInput(attrs={'class': 'form-control'}),
+            'speaker': forms.Select(attrs={'class': 'form-control'}),
             'topic': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
             'coordinator': forms.Select(attrs={'class': 'form-control'}),

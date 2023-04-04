@@ -40,7 +40,7 @@
                       Services
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">List Services</a>
+                      <a class="dropdown-item" href="{% url 'services-service_list' %}">List Services</a>
                       <a class="dropdown-item" href="{% url 'services-create_service' %}">New Service</a>
                     </div>
                   </li>
@@ -58,8 +58,8 @@
                       Blogs
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">List Blogs</a>
-                      <a class="dropdown-item" href="#">New Blog Post</a>
+                      <a class="dropdown-item" href="{% url 'blog-home' %}">List Blogs</a>
+                      <a class="dropdown-item" href="{% url 'post-create' %}">New Blog Post</a>
                     </div>
                   </li>
                   <li>
