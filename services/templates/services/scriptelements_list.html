@@ -1,0 +1,67 @@
+{% extends 'portal/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Script Elements</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Liturgist Name</th>
+        <th>Prelude Hymn Number</th>
+        <th>Prelude Hymn Name</th>
+        <th>Opening Words</th>
+        <th>Principle/Source Number</th>
+        <th>Principle/Source</th>
+        <th>Principle/Source Text</th>
+        <th>First Hymn Number</th>
+        <th>First Hymn Name</th>
+        <th>Meditation Reading</th>
+        <th>Metta Singer</th>
+        <th>Second Hymn Number</th>
+        <th>Second Hymn Name</th>
+        <th>Reader's Names</th>
+        <th>Singer's Names</th>
+        <th>Zoom Host Name</th>
+        <th>Slide Manager Name</th>
+        <th>Shared Plate Partner</th>
+        <th>Final Hymn Number</th>
+        <th>Final Hymn Name</th>
+        <th>Circle Round Singer</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for element in elements %}
+        <tr>
+          <td>{{ element.service }}</td>
+          <td>{{ element.liturgist_name }}</td>
+          <td>{{ element.prelude_hymn_number }}</td>
+          <td>{{ element.prelude_hymn_name }}</td>
+          <td>{{ element.opening_words }}</td>
+          <td>{{ element.principle_or_source_number }}</td>
+          <td>{{ element.principle_or_source }}</td>
+          <td>{{ element.principle_or_source_text }}</td>
+          <td>{{ element.first_hymn_number }}</td>
+          <td>{{ element.first_hymn_name }}</td>
+          <td>{{ element.meditation_reading }}</td>
+          <td>{{ element.metta_singer }}</td>
+          <td>{{ element.second_hymn_number }}</td>
+          <td>{{ element.second_hymn_name }}</td>
+          <td>{{ element.readers_names }}</td>
+          <td>{{ element.singers_names }}</td>
+          <td>{{ element.zoom_host_name }}</td>
+          <td>{{ element.slide_manager_name }}</td>
+          <td>{{ element.shared_plate_partner }}</td>
+          <td>{{ element.final_hymn_number }}</td>
+          <td>{{ element.final_hymn_name }}</td>
+          <td>{{ element.circle_round_singer }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="22">No script elements found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

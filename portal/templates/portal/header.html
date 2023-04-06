@@ -28,8 +28,8 @@
                     Speakers
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">List Speakers</a>
-                    <a class="dropdown-item" href="#">New Speaker</a>
+                    <a class="dropdown-item" href="{% url 'services-speaker_list' %}">List Speakers</a>
+                    <a class="dropdown-item" href="{% url 'services-add_speaker' %}">New Speaker</a>
                   </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -50,7 +50,7 @@
               <ul>
                 {% else %}
               <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-              <a class="nav-item nav-link" href="#">Register</a>
+            
             {% endif %}
           </div>
         </div>

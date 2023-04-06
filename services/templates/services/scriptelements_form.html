@@ -1,10 +1,102 @@
 {% extends 'portal/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-  <h2>Create Record</h2>
-  <form method="POST" class="form">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Save</button>
-  </form>
+  <div class="container">
+    <h1>New Script Elements</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group">
+        {{ form.service.label_tag }}
+        {{ form.service }}
+      </div>
+      <div class="form-group">
+        {{ form.liturgist_name.label_tag }}
+        {{ form.liturgist_name }}
+      </div>
+      <div class="form-group">
+        {{ form.prelude_hymn_number.label_tag }}
+        {{ form.prelude_hymn_number }}
+      </div>
+      <div class="form-group">
+        {{ form.prelude_hymn_name.label_tag }}
+        {{ form.prelude_hymn_name }}
+      </div>
+      <div class="form-group">
+        {{ form.opening_words.label_tag }}
+        {{ form.opening_words }}
+      </div>
+      <div class="form-group">
+        {{ form.principle_or_source_number.label_tag }}
+        {{ form.principle_or_source_number }}
+      </div>
+      <div class="form-group">
+        {{ form.principle_or_source.label_tag }}
+        {{ form.principle_or_source }}
+      </div>
+      <div class="form-group">
+        {{ form.principle_or_source_text.label_tag }}
+        {{ form.principle_or_source_text }}
+      </div>
+      <div class="form-group">
+        {{ form.first_hymn_number.label_tag }}
+        {{ form.first_hymn_number }}
+      </div>
+      <div class="form-group">
+        {{ form.first_hymn_name.label_tag }}
+        {{ form.first_hymn_name }}
+      </div>
+      <div class="form-group">
+        {{ form.meditation_reading.label_tag }}
+        {{ form.meditation_reading }}
+      </div>
+      <div class="form-group">
+        {{ form.metta_singer.label_tag }}
+        {{ form.metta_singer }}
+      </div>
+      <div class="form-group">
+        {{ form.second_hymn_number.label_tag }}
+        {{ form.second_hymn_number }}
+      </div>
+      <div class="form-group">
+        {{ form.second_hymn_name.label_tag }}
+        {{ form.second_hymn_name }}
+      </div>
+      <div class="form-group">
+        {{ form.readers_names.label_tag }}
+        {{ form.readers_names }}
+      </div>
+      <div class="form-group">
+        {{ form.singers_names.label_tag }}
+        {{ form.singers_names }}
+      </div>
+      <div class="form-group">
+        {{ form.zoom_host_name.label_tag }}
+        {{ form.zoom_host_name }}
+      </div>
+      <div class="form-group">
+        {{ form.slide_manager_name.label_tag }}
+        {{ form.slide_manager_name }}
+      </div>
+      <div class="form-group">
+        {{ form.shared_plate_partner.label_tag }}
+        {{ form.shared_plate_partner }}
+      </div>
+      <div class="form-group">
+        {{ form.final_hymn_number.label_tag }}
+        {{ form.final_hymn_number }}
+      </div>
+      <div class="form-group">
+        {{ form.final_hymn_name.label_tag }}
+        {{ form.final_hymn_name }}
+      </div>
+      <div class="form-group">
+        {{ form.circle_round_singer.label_tag }}
+        {{ form.circle_round_singer }}
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  </div>
 {% endblock %}
+
+
