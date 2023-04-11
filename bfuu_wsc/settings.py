@@ -16,6 +16,7 @@ import dj_database_url
 from pathlib import Path
 from django.core.management.utils import get_random_secret_key
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     "blog.apps.BlogConfig",
     "crispy_forms",
     "crispy_bootstrap5",
+    "sendgrid_backend",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
