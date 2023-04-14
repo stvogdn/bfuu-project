@@ -7,8 +7,7 @@
       <tr>
         <th>Name</th>
         <th>Biography</th>
-        <th>Date Created</th>
-        <th>Date Modified</th>
+        <th colspan="2">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -16,9 +15,9 @@
         <tr>
           <td>{{ speaker.name }}</td>
           <td>{{ speaker.biography }}</td>
-          <td>{{ speaker.date_created }}</td>
-          <td>{{ speaker.date_modified }}</td>
-        </tr>
+          <td><a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'services-update_speaker' speaker.id %}">Edit</a></td>
+          <td><a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'services-delete_speaker' speaker.id %}">Delete</a></td>
+            </tr>
       {% empty %}
         <tr>
           <td colspan="4">No speakers found.</td>

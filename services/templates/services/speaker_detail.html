@@ -1,0 +1,34 @@
+{% extends 'portal/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Speaker</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Name:</strong></p>
+      <p>{{ speaker.name }}</p>
+    </div>
+    <div class="col-md-6">
+      <p><strong>Email:</strong></p>
+      <p>{{ speaker.email }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p><strong>Biography:</strong></p>
+      <p>{{ speaker.biography }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Date Created:</strong></p>
+      <p>{{ speaker.date_created|date:"F j, Y, g:i a" }}</p>
+    </div>
+    <div class="col-md-6">
+      <p><strong>Date Modified:</strong></p>
+      <p>{{ speaker.date_modified|date:"F j, Y, g:i a" }}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

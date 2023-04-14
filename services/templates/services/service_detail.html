@@ -1,0 +1,44 @@
+{% extends 'portal/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Service</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <p><strong>Date and Time of Service:</strong></p>
+      <p>{{ service.service_date|date:"F j, Y, g:i a" }}</p>
+    </div>
+    <div class="col-md-4">
+      <p><strong>Speaker:</strong></p>
+      <p>{{ service.speaker }}</p>
+    </div>
+    <div class="col-md-4">
+      <p><strong>Title:</strong></p>
+      <p>{{ service.topic }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p><strong>Description:</strong></p>
+      <p>{{ service.description }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p><strong>Coordinator:</strong></p>
+      <p>{{ service.coordinator }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Date Created:</strong></p>
+      <p>{{ service.date_created|date:"F j, Y, g:i a" }}</p>
+    </div>
+    <div class="col-md-6">
+      <p><strong>Date Modified:</strong></p>
+      <p>{{ service.date_modified|date:"F j, Y, g:i a" }}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

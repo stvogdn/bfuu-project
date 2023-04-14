@@ -9,8 +9,7 @@
         <th>Speaker</th>
         <th>Topic</th>
         <th>Coordinator</th>
-        <th>Created</th>
-        <th>Modified</th>
+        <th colspan="2">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -20,8 +19,8 @@
       <td>{{ service.speaker }}</td>
       <td>{{ service.topic }}</td>
       <td>{{ service.coordinator }}</td>
-      <td>{{ service.date_created|date:"m-d-y G:i" }}</td>
-      <td>{{ service.date_modified|date:"m-d-y G:i" }}</td>
+      <td><a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'services-update_service' service.id %}">Edit</a></td>
+      <td><a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'services-delete_service' service.id %}">Delete</a></td>
     </tr>
     {% endfor %}
     </tbody>
