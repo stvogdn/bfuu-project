@@ -2,12 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.fields import DateTimeField
 from django.urls import reverse
+from phone_field import PhoneField
+
 
 # Create your models here.
 
 class Speaker(models.Model):
     name = models.CharField(verbose_name="Name", max_length=50)
     email = models.EmailField(verbose_name="Email", max_length=254, blank=True, null=True)
+    phone = PhoneField(verbose_name="Phone", blank=True, null=True)
     biography = models.TextField(verbose_name="Biography", default="")
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
@@ -25,6 +28,9 @@ class Service(models.Model):
     topic = models.CharField(verbose_name="Title", max_length=200)
     description = models.TextField(verbose_name="Description", default="")
     coordinator = models.ForeignKey(User, on_delete=models.CASCADE)
+    in_person_attendance = models.IntegerField(verbose_name="In Person Attendance", default=0)
+    zoom_attendance = models.IntegerField(verbose_name="Zoom Attendance", default=0)
+    offering = models.DecimalField(verbose_name="Offering", max_digits=10, decimal_places=2, default=0.00)
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
     
